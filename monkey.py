@@ -25,8 +25,9 @@ def main():
 #	print(marks)
 	while marks < 1:
 		if marks > best:
-			print(marks, result)
+		#	print(marks, result)
 			best = marks
 		result = generate(28)
 		marks = score(goalstring,result)
+		#print(best)
 main()
