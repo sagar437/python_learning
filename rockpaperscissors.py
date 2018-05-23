@@ -32,5 +32,6 @@ while  (player_input != 'no' ):
 
 		compare(player1_input,player2_input)
 	else:
+		print("exit out of game")
 		sys.exit()
 
