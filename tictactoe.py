@@ -45,5 +45,15 @@ def full_board_check(board):
 			return False
 		else:
 			return True
+
+def player_choice(board):
+	position = 0
+		while position not in [1, 2, 3, 4, 5, 6, 7, 8, 9 , 10] or not space_check(board, position):
+			position = int(input('Chose your next position:(1-9)')
+	return position
+
+def replay():
+	return input(' Do you want to play again? yes or not:').lower.startswith(y)
+
 	
 	
