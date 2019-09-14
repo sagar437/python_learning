@@ -7,15 +7,24 @@ def create_board(board):
 #test_board = ['_'] * 10
 #create_board(test_board)
 
-def player_input():
-	marker = ''
-	while marker != 'X' or marker != 'O':
-		marker = input("Enter a valid input 'X' or 'O'").upper()
-	if marker == 'X':
-		return ('X', 'O')
-	else:
-		return('O', 'X')
+#def player_input():
+#	marker = ''
+#	while not (marker == 'X' or marker == 'O'):
+#		marker = input("Enter a valid input 'X' or 'O'").upper()
+#	if marker == 'X':
+#		return ('X', 'O')
+#	else:
+#		return('O', 'X')
 #player_input()
+def player_input():
+    marker = ''
+    while not (marker == 'X' or marker == 'O'):
+        marker = input('Player 1: Do you want to be X or O? ').upper()
+
+    if marker == 'X':
+        return ('X', 'O')
+    else:
+        return ('O', 'X')
 	
 def place_maker(board, marker, position):
 	board[position] = marker
@@ -56,7 +65,7 @@ def player_choice(board):
 
 
 def replay():
-	return input(' Do you want to play again? yes or not:').lower.startswith(y)
+	return input('Do you want to play again? yes or not:').lower.startswith(y)
 
 print("welcome to tictactoe")
 	
