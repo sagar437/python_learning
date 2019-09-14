@@ -10,7 +10,7 @@ def create_board(board):
 def player_input():
 	marker = ''
 	while marker != 'X' or marker != 'O':
-		market = input("Enter a valid input 'X' or 'O'").upper()
+		marker = input("Enter a valid input 'X' or 'O'").upper()
 	if marker == 'X':
 		return ('X', 'O')
 	else:
@@ -48,9 +48,12 @@ def full_board_check(board):
 
 def player_choice(board):
 	position = 0
-		while position not in [1, 2, 3, 4, 5, 6, 7, 8, 9 , 10] or not space_check(board, position):
-			position = int(input('Chose your next position:(1-9)')
-	return position
+    
+    	while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position):
+        	position = int(input('Choose your next position: (1-9) '))
+        
+    	return position
+
 
 def replay():
 	return input(' Do you want to play again? yes or not:').lower.startswith(y)
@@ -58,45 +61,47 @@ def replay():
 print("welcome to tictactoe")
 	
 test_board = ['_']*10
-show_board(test_board)
-player1_marker,player2_marker = player_input()
+create_board(test_board)
+player1_marker, player2_marker = player_input()
 turn = chose_first()
 print(turn + 'will go first')
 play_game = input("Do you want to start the game? yes or no")
-if play_game.lower() == 'y':
+if play_game.lower()[0] == 'y':
 	game_on = True
 else:
 	game_on = False
-While game_on:
+while game_on:
 	if turn == 'player1':
-		show_board(test_board)
+		create_board(test_board)
 		position = player_choice(test_board)
 		place_maker(test_board, player1_marker, position)
-		if win_check(test_board, player1_marker)
-			show_board(test_board)
+		if win_check(test_board, player1_marker):
+			create_board(test_board)
 			print("Congratulations you are the winner:player1")
 			game_on = False
 		else:
 			if full_board_check(test_board):
-				show_board(test_board)
+				create_board(test_board)
 				print("the game is draw")
 				game_on = False
+				break
 			else:
 				turn = 'player2'
 	else:
-		show_board(test_board)
+		create_board(test_board)
 		position = player_choice(test_board)
 		place_maker(test_board, player2_marker, position)
-		if win_check(test_board, player2_marker)
-			show_board(test_board)
+		if win_check(test_board, player2_marker):
+			create_board(test_board)
 			print("congratulations you are the winnder:player2")
 			game_on = False
 		else:
 			if full_board_check(test_board):
-				show_board(test_board)
+				create_board(test_board)
 				print("the game is draw")
 				game_on = False
+				break
 			else:
 				turn = 'player1'
-if not replay():
-	break
+	if not replay():
+		break
