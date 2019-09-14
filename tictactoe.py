@@ -55,5 +55,48 @@ def player_choice(board):
 def replay():
 	return input(' Do you want to play again? yes or not:').lower.startswith(y)
 
+print("welcome to tictactoe")
 	
-	
+test_board = ['_']*10
+show_board(test_board)
+player1_marker,player2_marker = player_input()
+turn = chose_first()
+print(turn + 'will go first')
+play_game = input("Do you want to start the game? yes or no")
+if play_game.lower() == 'y':
+	game_on = True
+else:
+	game_on = False
+While game_on:
+	if turn == 'player1':
+		show_board(test_board)
+		position = player_choice(test_board)
+		place_maker(test_board, player1_marker, position)
+		if win_check(test_board, player1_marker)
+			show_board(test_board)
+			print("Congratulations you are the winner:player1")
+			game_on = False
+		else:
+			if full_board_check(test_board):
+				show_board(test_board)
+				print("the game is draw")
+				game_on = False
+			else:
+				turn = 'player2'
+	else:
+		show_board(test_board)
+		position = player_choice(test_board)
+		place_maker(test_board, player2_marker, position)
+		if win_check(test_board, player2_marker)
+			show_board(test_board)
+			print("congratulations you are the winnder:player2")
+			game_on = False
+		else:
+			if full_board_check(test_board):
+				show_board(test_board)
+				print("the game is draw")
+				game_on = False
+			else:
+				turn = 'player1'
+if not replay():
+	break
