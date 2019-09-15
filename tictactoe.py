@@ -4,18 +4,6 @@ def create_board(board):
 	print(board[4] + ' | ' + board[5] + ' | ' + board[6])
 	print(board[1] + ' | ' + board[2] + ' | ' + board[3])
 
-#test_board = ['_'] * 10
-#create_board(test_board)
-
-#def player_input():
-#	marker = ''
-#	while not (marker == 'X' or marker == 'O'):
-#		marker = input("Enter a valid input 'X' or 'O'").upper()
-#	if marker == 'X':
-#		return ('X', 'O')
-#	else:
-#		return('O', 'X')
-#player_input()
 def player_input():
     marker = ''
     while not (marker == 'X' or marker == 'O'):
@@ -36,8 +24,6 @@ def win_check(board,marker):
 	       (board[1] == board[5] == board[9] == marker) or
 	       (board[3] == board[5] == board[7] == marker))
 
-#place_maker(test_board, 'X', 5)
-#create_board(test_board)		
 import random
 def chose_first():
 	if random.randint(0,1) == 0:
@@ -57,18 +43,14 @@ def full_board_check(board):
 
 def player_choice(board):
 	position = 0
-    
-    	while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position):
-        	position = int(input('Choose your next position: (1-9) '))
-        
-    	return position
-
+	while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position):
+		position = int(input('Choose your next position: (1-9)'))
+	return position
 
 def replay():
 	return input('Do you want to play again? yes or not:').lower.startswith(y)
 
 print("welcome to tictactoe")
-	
 test_board = ['_']*10
 create_board(test_board)
 player1_marker, player2_marker = player_input()
