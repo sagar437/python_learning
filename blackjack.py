@@ -14,10 +14,25 @@ def deck():
 
 ###deal the card####2 cards each randomly###
 def deal():
-	cards = deck()
-	random.shuffle(cards)
-	for card in range(2):
-		player_cards = cards
+	test_cards = deck()
+#	print(test_cards)
+	player_cards = []
+	dealer_cards = []
+#	random.shuffle(test_cards)
+	while len(player_cards) < 2:
+		random.shuffle(test_cards)
+		for card in test_cards:
+			print(card)
+			player_cards.append(card)
+#			test_cards.remove(card)
+#	for card in test_cards:
+#		random.shuffle(test_cards)
+#		while len(dealer_cards) < 2:
+#			dealer_cards.append(card)
+	print(player_cards)
+#	print(dealer_cards)
+deal()
+
 	
 deal()	
 	
