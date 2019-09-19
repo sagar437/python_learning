@@ -16,9 +16,33 @@ def deal():
 	return hand
 player1_hand = deal()
 dealer_hand = deal()
-print(player1_hand)
-print(dealer_hand)
-#print("do you want to hit or stay")
-#if player_response == 'hit':
-	
-	
+
+def hit():
+	new_card = deck.pop()
+	return new_card
+
+
+player_response = input("do you want to hit or stay")
+if player_response == 'hit':
+	pnew_card = hit()
+	dnew_card = hit()
+	player1_hand.append(pnew_card)
+	dealer_hand.append(dnew_card)
+total_player = 0
+total_dealer = 0
+for p_card in player1_hand:
+	total_player += int(p_card)
+for d_card in dealer_hand:
+	total_dealer += int(d_card)
+if total_player > 21 and total_dealer < 21:
+	print(total_player)
+	print(total_dealer)
+	print("dealer win")
+elif total_dealer > 21 and total_player <21:
+	print(total_player)
+	print(total_dealer)
+	print("player win")
+else:
+	print(total_player)
+	print(total_dealer)
+	print("continue playing")
