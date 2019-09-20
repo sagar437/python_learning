@@ -1,0 +1,26 @@
+import random
+suits = ('heart','diamond','spade','club')
+ranks = ('two','three','four','five','six','seven','eight','nine','ten','joker','king','queen','ace')	
+
+class Card():
+	def __init__(self,rank,suit):
+		self.rank = rank
+		self.suit = suit
+	def __str__(self):
+		return self.rank + 'of' + self.suit
+
+class Deck():
+	def __init__(self):
+		self.deck = []
+		for suit in suits:
+			for rank in ranks:
+				self.deck.append(card(rank,suit))
+	def shuffle(self):
+		random.shuffle(self.deck)
+	
+	def deal(self):
+		single_card = self.deck.pop()
+		return single_card
+test_deck = Deck()
+print(test_deck)
+
