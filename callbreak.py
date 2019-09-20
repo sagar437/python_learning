@@ -27,6 +27,38 @@ class deck():
 	def deal(self):
 		single_card = self.deck.pop()
 		return single_card
-test_deck = deck()
-print(test_deck)
+
+class player(object):
+	def __init__(self,name):
+		self.name = name
+		self.hand = []
+
+	def sayHello(self):
+        	print("Hi! My name is" + self.name)
+        	return self
+
+		
+	def draw(self,deck,num=1):
+		for _ in range(num):
+			card = deck.deal()
+			self.hand.append(card)
+		return self.hand
+
+	def __repr__(self):
+		print("{} has {}".format(self.name,self.hand))
+		return self
+
+	def discard(self):
+		return self.hand.pop()
+
+
+mydeck = deck()
+mydeck.shuffle()
+#print(mydeck)
+bob = player("Bob")
+#bob.sayHello()
+bob.draw(mydeck,13)
+#bob.showhand()
+bob.repr()
+
 
