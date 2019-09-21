@@ -28,7 +28,7 @@ class deck():
 		single_card = self.deck.pop()
 		return single_card
 
-class player(object):
+class player():
 	def __init__(self,name):
 		self.name = name
 		self.hand = []
@@ -44,7 +44,7 @@ class player(object):
 			self.hand.append(card)
 		return self.hand
 
-	def __repr__(self):
+	def showhand(self):
 		print("{} has {}".format(self.name,self.hand))
 		return self
 
@@ -56,9 +56,8 @@ mydeck = deck()
 mydeck.shuffle()
 #print(mydeck)
 bob = player("Bob")
-#bob.sayHello()
+bob.sayHello()
 bob.draw(mydeck,13)
-#bob.showhand()
-bob.repr()
+bob.showhand()
 
 
