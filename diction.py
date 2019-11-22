@@ -1,10 +1,14 @@
-def find_odd(lst):
+def sockMerchant(ar):
 	dict = {}
-	for i in lst:
-		if i not in dict:
-			dict[i] = 1
-		else:
+	sum = 0
+	for i in ar:
+		if i in dict:
 			dict[i] += 1
-	for key,val in dict.items():
-		if val%2 != 0:
-			return key
+		else:
+			dict[i] = 1
+		if dict[i] == 2:
+	#		print(dict[i])
+			sum += 1
+	print(sum)
+arr = [1,1,1,2,2,3,3,4,5,6,7,8]
+sockMerchant(arr)

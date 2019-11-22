@@ -8,6 +8,8 @@ class card():
 		self.suit = suit
 	def __str__(self):
 		return self.rank + 'of' + self.suit
+	def __repr__(self):
+		return ",".join(['('+self.rank, self.suit+')'])
 
 class deck():
 	def __init__(self):
@@ -59,5 +61,6 @@ bob = player("Bob")
 bob.sayHello()
 bob.draw(mydeck,13)
 bob.showhand()
+print(bob.discard())
 
 
